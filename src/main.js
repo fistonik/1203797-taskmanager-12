@@ -32,7 +32,7 @@ const createMenuTemplate = () => {
         >STATISTICS</label
       >
     </section>`
-  )
+  );
 };
 
 const createFilterTemplate = () => {
@@ -95,7 +95,8 @@ const createFilterTemplate = () => {
       <label for="filter__archive" class="filter__label"
         >Archive <span class="filter__archive-count">115</span></label
       >
-    </section>`);
+    </section>`
+  );
 };
 
 const createBoardTemplate = () => {
@@ -108,7 +109,7 @@ const createBoardTemplate = () => {
       </div>
       <div class="board__tasks"></div>
     </section>`
-  )
+  );
 };
 
 const createFormTaskTemplate = () => {
@@ -310,7 +311,7 @@ const createFormTaskTemplate = () => {
         </div>
       </form>
     </article>`
-  )
+  );
 };
 
 const createCardTaskTemplate = () => {
@@ -357,33 +358,33 @@ const createCardTaskTemplate = () => {
         </div>
       </div>
     </article>`
-  )
+  );
 };
 
 const createButtonMore = () => {
   return (
     `<button class="load-more" type="button">load more</button>`
-  )
+  );
 };
 
 const render = (container, template, place) => {
   container.insertAdjacentHTML(place, template);
 }
 
-const mainElement = document.querySelector('.main');
-const mainControlElement = mainElement.querySelector('.main__control');
+const mainElement = document.querySelector(`.main`);
+const mainControlElement = mainElement.querySelector(`.main__control`);
 
-render(mainControlElement, createMenuTemplate(), 'beforeend');
-render(mainElement, createFilterTemplate(), 'beforeend');
-render(mainElement, createBoardTemplate(), 'beforeend');
+render(mainControlElement, createMenuTemplate(), `beforeend`);
+render(mainElement, createFilterTemplate(), `beforeend`);
+render(mainElement, createBoardTemplate(), `beforeend`);
 
-const boardElement = mainElement.querySelector('.board');
-const taskListElement = boardElement.querySelector('.board__tasks');
+const boardElement = mainElement.querySelector(`.board`);
+const taskListElement = boardElement.querySelector(`.board__tasks`);
 
-render(taskListElement, createFormTaskTemplate(), 'beforeend');
+render(taskListElement, createFormTaskTemplate(), `beforeend`);
 
 for (let i = 0; i < TASK_COUNT; i++) {
-  render(taskListElement, createCardTaskTemplate(), 'beforeend');
+  render(taskListElement, createCardTaskTemplate(), `beforeend`);
 }
 
-render(boardElement, createButtonMore(), 'beforeend');
+render(boardElement, createButtonMore(), `beforeend`);
